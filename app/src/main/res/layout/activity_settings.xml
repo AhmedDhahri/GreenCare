@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back"
+    tools:context=".Settings">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/ic_icon"
+        android:backgroundTint="@color/green"/>
+
+    <LinearLayout
+        android:id="@+id/first"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@color/white4"
+        android:layout_marginHorizontal="5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WiFi SSID"
+            android:textColor="@color/white1"
+            android:layout_weight="0.2"/>
+
+        <EditText
+            android:id="@+id/ssid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/second"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/first"
+        android:layout_marginBottom="10dp"
+        android:background="@color/white4"
+        android:layout_marginHorizontal="5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WiFi PASS"
+            android:textColor="@color/white1"
+            android:layout_weight="0.2"/>
+
+        <EditText
+            android:id="@+id/pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:inputType="textPassword" />
+    </LinearLayout>
+    <View
+        android:id="@+id/V"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/second"
+        android:background="#50000000"
+        android:paddingTop="20dp"
+        android:layout_marginHorizontal="5dp"/>
+    <LinearLayout
+        android:id="@+id/third"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/V"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:background="@color/white4"
+        android:layout_marginHorizontal="5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sleep Time  "
+            android:textColor="@color/white1"
+            android:layout_weight="0.2"/>
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:max="70"
+            android:layout_below="@+id/second"
+            android:background="@color/white3"
+            android:layout_weight="0.6"
+            android:contextClickable="true"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/fourth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/third"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:background="@color/white4"
+        android:layout_marginHorizontal="5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="setting Time"
+            android:textColor="@color/white1"
+            android:layout_weight="0.2"/>
+        <SeekBar
+            android:id="@+id/seekBar2"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:max="60"
+            android:min="10"
+            android:background="@color/white3"
+            android:layout_weight="0.6"
+            android:contextClickable="true"/>
+    </LinearLayout>
+    <View
+        android:id="@+id/V1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/fourth"
+        android:background="#50000000"
+        android:paddingTop="20dp"
+        android:layout_marginHorizontal="5dp"/>
+    <LinearLayout
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fourth"
+        android:layout_marginTop="20dp"
+        android:layout_margin="40dp"
+        android:paddingHorizontal="30dp"
+        android:background="@color/dark">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="b_ok"
+            android:text="Ok"
+            android:layout_marginHorizontal="10dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="b_no"
+            android:text="Ignore"
+            android:layout_marginHorizontal="10dp" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/sbar_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="10dp"
+        android:layout_margin="50dp"
+        android:layout_centerHorizontal="true"
+        android:text="0 minutes"
+        android:background="@color/dark"
+        android:shadowColor="#60000000"
+        android:visibility="invisible"/>
+    <FrameLayout
+        android:id="@+id/wait1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/blue"
+        android:visibility="invisible">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@style/Base.Animation.AppCompat.Dialog"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center" />
+    </FrameLayout>
+</RelativeLayout>
